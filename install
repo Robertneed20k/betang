@@ -12,4 +12,4 @@ chmod +x ~/betang.sh
 echo "betang has been successfully installed!"
 
 # Provide instructions on how to run the script
-echo "To start using betang,type "betang"
+echo "To start using betang,type 'betang"
