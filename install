@@ -10,14 +10,9 @@ curl -s -o ~/betang.sh https://raw.githubusercontent.com/robertneed20k/betang/ma
 echo -e "\033[1;32mMaking the script executable...\033[0m"
 chmod +x ~/betang.sh
 
-# Simulate installation progress with loading bar
-echo -e "\033[1;32mInstalling...\033[0m"
-echo -n "["
-for i in {1..20}; do
-    echo -n "#"
-    sleep 0.1
-done
-echo "]"
+# Move the script to a directory in $PATH
+echo -e "\033[1;32mMoving the script to a directory in \$PATH...\033[0m"
+mv ~/betang.sh /data/data/com.termux/files/usr/bin/betang
 
 # Inform the user that betang has been successfully installed with a cool message
 echo -e "\033[1;32mCongratulations! betang has been successfully installed! 🎉\033[0m"
