@@ -1,13 +1,15 @@
 #!/bin/bash
 
-# Download the main script
-echo "Downloading betang script..."
-curl -# -o ~/betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/betang.sh
+# Installation script for betang
 
-# Check if download was successful
-if [ $? -eq 0 ]; then
-    echo "betang script downloaded successfully!"
-    echo "You can now run the script by typing 'betang' in your terminal."
-else
-    echo "Failed to download betang script. Please try again later."
-fi
+# Download the main script
+curl -s -o ~/betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/betang.sh
+
+# Make the script executable
+chmod +x ~/betang.sh
+
+# Inform the user that betang has been successfully installed
+echo "betang has been successfully installed!"
+
+# Provide instructions on how to run the script
+echo "To start using betang, simply type 'bash ~/betang.sh' in your terminal."
