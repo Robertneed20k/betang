@@ -2,14 +2,24 @@
 
 # Installation script for betang
 
-# Download the main script
+# Download the main script with some cool effects
+echo -e "\e[32mDownloading the main script...\e[0m"
 curl -s -o ~/betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/betang.sh
 
 # Make the script executable
+echo -e "\e[32mMaking the script executable...\e[0m"
 chmod +x ~/betang.sh
 
-# Inform the user that betang has been successfully installed
-echo "betang has been successfully installed!"
+# Simulate installation progress with loading bar
+echo -e "\e[32mInstalling...\e[0m"
+for i in {1..20}; do
+    echo -ne "\e[32m#\e[0m"
+    sleep 0.1
+done
+echo
 
-# Provide simplified instructions
-echo "To start, simply type 'betang' in your terminal."
+# Inform the user that betang has been successfully installed with a cool message
+echo -e "\e[32mCongratulations! betang has been successfully installed! 🎉\e[0m"
+
+# Provide simplified instructions with a fun emoji
+echo -e "\e[32mTo start, simply type 'betang' in your terminal.\e[0m"
