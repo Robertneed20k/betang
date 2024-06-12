@@ -38,6 +38,7 @@ loading_animation & # Run the loading animation function in the background
 pid=$!              # Get the process ID of the background task
 curl -s -o ~/betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/betang.sh >/dev/null 2>&1
 kill $pid >/dev/null 2>&1 # Stop the loading animation once the download is complete
+echo -e "\rDownloading the main script... Done"
 
 # Make the script executable
 echo "Making the script executable..."
