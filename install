@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Download the betang.sh script from GitHub
+curl -O https://raw.githubusercontent.com/robertneed20k/betang/main/betang.sh
+
+# Make the script executable
+chmod +x betang.sh
+
+# Move the script to a directory in your PATH (assuming $PREFIX/bin is in your PATH)
+mv betang.sh $PREFIX/bin/betang
+
+echo "betang has been successfully installed!"
