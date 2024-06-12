@@ -1,25 +1,43 @@
 #!/bin/bash
 
-# Installation script for betang
-
-# Function to display a progress bar animation
-function progress_bar() {
+# Function to display a spinning loading animation
+function loading_animation() {
     local duration=${1:-10} # Default duration: 10 seconds
-    local chars=("▁" "▂" "▃" "▄" "▅" "▆" "▇" "█")
+    local chars=("⠋" "⠙" "⠹" "⠸" "⠼" "⠴" "⠦" "⠧" "⠇" "⠏")
     local num_chars=${#chars[@]}
     local interval=$((duration * 1000 / num_chars))
 
     for ((i = 0; i < num_chars; i++)); do
-        echo -ne "\rDownloading the main script... [${chars[i]}]"
+        echo -ne "\rDownloading the main script... ${chars[i]}"
         sleep 0.$interval
     done
-    echo -ne "\rDownloading the main script... [█]"
-    echo " Done!"
 }
 
-# Download the main script with some cool effects
+# Function to display colorful ASCII art
+function display_ascii_art() {
+    echo -e "\e[1;33m"
+    cat << "EOF"
+ ____  _     _ _     _____ _     _     
+|  _ \| |   (_) |   |  ___(_)___| |__  
+| |_) | |   | | |   | |_  | / __| '_ \ 
+|  _ <| |___| | |___|  _| | \__ \ | | |
+|_| \_\_____/|_|_____|_|   |_|___/_| |_|
+
+EOF
+    echo -e "\e[0m"
+}
+
+# Installation script for betang
+
+# Display colorful ASCII art
+display_ascii_art
+
+# Download the main script with a spinning loading animation
 echo "Downloading the main script..."
-progress_bar
+loading_animation & # Run the loading animation function in the background
+pid=$!              # Get the process ID of the background task
+curl -s -o ~/betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/betang.sh >/dev/null 2>&1
+kill $pid >/dev/null 2>&1 # Stop the loading animation once the download is complete
 
 # Make the script executable
 echo "Making the script executable..."
