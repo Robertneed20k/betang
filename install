@@ -11,5 +11,5 @@ chmod +x ~/betang.sh
 # Inform the user that betang has been successfully installed
 echo "betang has been successfully installed!"
 
-# Provide instructions on how to run the script
-echo "To start using betang,type 'betang"
+# Provide simplified instructions
+echo "To start, simply type 'betang' in your terminal."
