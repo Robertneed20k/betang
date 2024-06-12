@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#permission allow
+termux-setup-storage
+
 # Function to display a spinning loading animation
 function loading_animation() {
     local duration=${1:-10} # Default duration: 10 seconds
