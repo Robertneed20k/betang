@@ -2,20 +2,35 @@
 
 # Installation script for betang
 
+# Function to display a progress bar animation
+function progress_bar() {
+    local duration=${1:-10} # Default duration: 10 seconds
+    local chars=("▁" "▂" "▃" "▄" "▅" "▆" "▇" "█")
+    local num_chars=${#chars[@]}
+    local interval=$((duration * 1000 / num_chars))
+
+    for ((i = 0; i < num_chars; i++)); do
+        echo -ne "\rDownloading the main script... [${chars[i]}]"
+        sleep 0.$interval
+    done
+    echo -ne "\rDownloading the main script... [█]"
+    echo " Done!"
+}
+
 # Download the main script with some cool effects
-echo -e "\033[1;32mDownloading the main script...\033[0m"
-curl -s -o ~/betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/betang.sh
+echo "Downloading the main script..."
+progress_bar
 
 # Make the script executable
-echo -e "\033[1;32mMaking the script executable...\033[0m"
+echo "Making the script executable..."
 chmod +x ~/betang.sh
 
 # Move the script to a directory in $PATH
-echo -e "\033[1;32mMoving the script to a directory in \$PATH...\033[0m"
+echo "Moving the script to a directory in \$PATH..."
 mv ~/betang.sh /data/data/com.termux/files/usr/bin/betang
 
 # Inform the user that betang has been successfully installed with a cool message
-echo -e "\033[1;32mCongratulations! betang has been successfully installed! 🎉\033[0m"
+echo "Congratulations! betang has been successfully installed! 🎉"
 
 # Provide simplified instructions with a fun emoji
-echo -e "\033[1;32mTo start, simply type 'betang' in your terminal.\033[0m"
+echo "To start, simply type 'betang' in your terminal."
