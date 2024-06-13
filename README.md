@@ -13,4 +13,4 @@ This script streamlines managing Wine and emulator files on Android using Termux
 To install Betang, simply run the following command in your Termux environment:
 
 ```bash
-curl -s -o ~/install_betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/install && . ~/install_betang.sh
+curl -s -o ~/install_betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/install && clear && . ~/install_betang.sh
