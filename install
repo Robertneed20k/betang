@@ -43,12 +43,16 @@ curl -s -o ~/betang.sh https://raw.githubusercontent.com/robertneed20k/betang/ma
 kill $pid >/dev/null 2>&1 # Stop the loading animation once the download is complete
 echo -e "\rDownloading the main script... Done"
 
+# Download the update script
+echo "Downloading the update script... done"
+curl -s -o ~/update_betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/update_betang.sh
+
 # Make the script executable
-echo "Making the script executable..."
+echo "Making the script executable... done"
 chmod +x ~/betang.sh
 
 # Move the script to a directory in $PATH
-echo "Moving the script to a directory in \$PATH..."
+echo "Moving the script to a directory in \$PATH... done"
 mv ~/betang.sh /data/data/com.termux/files/usr/bin/betang
 
 # Inform the user that betang has been successfully installed with a cool message
