@@ -6,21 +6,37 @@ SCRIPT_URL="https://raw.githubusercontent.com/robertneed20k/betang/main/betang.s
 # Path to the current script
 SCRIPT_PATH="$PREFIX/bin/betang"
 
+# Function to check internet connection
+check_internet() {
+    echo "Checking for internet connection..."
+    wget -q --spider http://google.com
+
+    if [ $? -eq 0 ]; then
+        echo -e "\e[1;32mInternet connection available.\e[0m"
+        return 0
+    else
+        echo -e "\e[1;31mNo internet connection. Cannot check for updates.\e[0m"
+        return 1
+    fi
+}
+
 # Function to update the script
 update_script() {
     echo "Checking for updates..."
     curl -s -o ~/betang_latest.sh "$SCRIPT_URL"
-    
+
     if ! cmp -s ~/betang_latest.sh "$SCRIPT_PATH"; then
-        echo "New version found. Updating..."
+        echo -e "\e[1;32mNew version found. Updating...\e[0m"
         mv ~/betang_latest.sh "$SCRIPT_PATH"
         chmod +x "$SCRIPT_PATH"
-        echo "Update complete!"
+        echo -e "\e[1;32mUpdate complete!\e[0m"
     else
-        echo "You are already using the latest version."
+        echo -e "\e[1;32mYou are already using the latest version.\e[0m"
         rm ~/betang_latest.sh
     fi
 }
 
-# Call the update function
-update_script
+# Call the functions
+if check_internet; then
+    update_script
+fi
