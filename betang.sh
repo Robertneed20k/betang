@@ -1,6 +1,7 @@
 #!/bin/bash
+
 # Call the update script
-~/update_betang.sh
+$PREFIX/bin/update_betang
 
 # Define a function to check initial setup requirements
 check_setup() {
