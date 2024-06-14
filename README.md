@@ -22,7 +22,7 @@ curl -s -o ~/install_betang.sh https://raw.githubusercontent.com/robertneed20k/b
 
 ## Usage Instructions
 
-#### To prepare for using Betang, follow these steps:
+### To prepare for using Betang, follow these steps:
 
 1. Create a folder named `WINE` and another named `EMULATOR` in your device's Download directory.
    
