@@ -24,11 +24,11 @@ curl -s -o ~/install_betang.sh https://raw.githubusercontent.com/robertneed20k/b
 
 ### To prepare for using Betang, follow these steps:
 
-1. Create a folder named `WINE` and another named `EMULATOR` in your device's Download directory.
+1. Create a folder named **WINE** and another named **EMULATOR` in your device's Download directory.
    
-2. Move your Wine files into the `WINE` folder.
+2. Move your Wine files into the **WINE** folder.
    
-3. Move your emulator backup files into the `EMULATOR` folder.
+3. Move your emulator backup files into the **EMULATOR** folder.
 
 
 ### Main Menu
