@@ -14,3 +14,5 @@ To install Betang, simply run the following command in your Termux environment:
 
 ```bash
 curl -s -o ~/install_betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/install && clear && . ~/install_betang.sh
+```
+https://github.com/Robertneed20k/betang/blob/cf719b90d05ee5cdd940c8628880c4bd8a5d4413/Readme.md
