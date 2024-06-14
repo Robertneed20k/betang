@@ -9,9 +9,7 @@ SCRIPT_PATH="$PREFIX/bin/betang"
 # Function to check internet connection
 check_internet() {
     echo "Checking for internet connection..."
-    wget -q --spider http://google.com
-
-    if [ $? -eq 0 ]; then
+    if wget -q --spider http://google.com; then
         echo -e "\e[1;32mInternet connection available.\e[0m"
         return 0
     else
@@ -23,17 +21,26 @@ check_internet() {
 # Function to update the script
 update_script() {
     echo "Checking for updates..."
-    curl -s -o ~/betang_latest.sh "$SCRIPT_URL"
-
-    if ! cmp -s ~/betang_latest.sh "$SCRIPT_PATH"; then
-        echo -e "\e[1;32mNew version found. Updating...\e[0m"
-        mv ~/betang_latest.sh "$SCRIPT_PATH"
-        chmod +x "$SCRIPT_PATH"
-        echo -e "\e[1;32mUpdate complete!\e[0m"
+    # Create a temporary file for the latest script
+    TMPFILE=$(mktemp /tmp/betang_latest.XXXXXX.sh)
+    
+    if curl -s -o "$TMPFILE" "$SCRIPT_URL"; then
+        # Check if the downloaded script is different
+        if ! cmp -s "$TMPFILE" "$SCRIPT_PATH"; then
+            echo -e "\e[1;32mNew version found. Updating...\e[0m"
+            # Move the temporary file to SCRIPT_PATH
+            mv "$TMPFILE" "$SCRIPT_PATH"
+            chmod +x "$SCRIPT_PATH"
+            echo -e "\e[1;32mUpdate complete!\e[0m"
+        else
+            echo -e "\e[1;32mYou are already using the latest version.\e[0m"
+        fi
     else
-        echo -e "\e[1;32mYou are already using the latest version.\e[0m"
-        rm ~/betang_latest.sh
+        echo -e "\e[1;31mFailed to download the latest version.\e[0m"
     fi
+    
+    # Clean up the temporary file
+    rm -f "$TMPFILE"
 }
 
 # Call the functions
