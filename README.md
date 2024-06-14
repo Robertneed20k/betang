@@ -2,38 +2,30 @@
 
 ## Description
 
-Betang is a powerful script designed to streamline the management of Wine and emulator files on Android devices using Termux. It automates the extraction, setup, and switching between different Wine versions and emulators. Key features include:
+Betang is a robust script designed to simplify the management of Wine and emulator files on Android devices through Termux. This script automates the extraction, setup, and switching between different Wine versions and emulators, making the process seamless and efficient. 
 
-- **Easy File Extraction**: Automatically extract files with a simple command.
-- **Replace or No Replace Options**: Choose whether to replace existing files during setup.
-- **User-Friendly Prompts**: Guided prompts ensure a smooth user experience.
-- **Automated Setup Checks**: Verify the integrity and readiness of your environment before proceeding.
+### Key Features
 
-## Instructions
+- **Automated File Extraction**: Easily extract files with simple commands.
+- **Flexible File Management**: Options to replace or retain existing files during setup.
+- **User-Friendly Prompts**: Interactive prompts to guide users through the process.
+- **Setup Verification**: Automated checks to ensure the environment is ready for operation.
 
-1. **Create Directories**:
-    - Create a `WINE` folder and an `EMULATOR` folder in your `Download` directory.
-2. **Move Files**:
-    - Move your Wine files into the `WINE` folder.
-    - Move your emulator backup files into the `EMULATOR` folder.
+## Prerequisites
 
-## Features
+Before using Betang, ensure you have the following setup on your device:
 
-### Wine Changer
-Easily switch between different versions of Wine.
-
-### Emulator Changer
-Manage and switch between various emulators effortlessly.
-
-### Retribution Changer
-Additional customizable options for your emulators and Wine setup.
-
-### Termux Integration
-Seamless integration with Termux for a powerful Android development environment.
+1. **Termux**: Install Termux from the [Google Play Store](https://play.google.com/store/apps/details?id=com.termux) or [F-Droid](https://f-droid.org/packages/com.termux/).
+2. **Download Directories**:
+   - Create a `WINE` folder in your `Download` directory.
+   - Create an `EMULATOR` folder in your `Download` directory.
+3. **Files**:
+   - Place your Wine `.tar.xz` files in the `WINE` folder.
+   - Place your emulator `.tar.gz` files in the `EMULATOR` folder.
 
 ## Installation
 
-To install Betang, simply run the following command in your Termux environment:
+To install Betang, run the following command in your Termux environment:
 
 ```bash
 curl -s -o ~/install_betang.sh https://raw.githubusercontent.com/robertneed20k/betang/main/install && clear && . ~/install_betang.sh
