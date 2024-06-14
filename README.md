@@ -60,6 +60,8 @@ Upon running the script, you will be presented with the following options:
 - Android Development
 - Wine Setup
 - Emulator Setup
+- wine changer
+- emulator changer
 
 ## Contribution
 
