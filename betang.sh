@@ -156,7 +156,7 @@ while true; do
                 ;;
             "Exit")
                 echo "Exiting..."
-                exit 0
+                exit 1
                 ;;
             *) 
                 echo "Invalid option. Please try again."
